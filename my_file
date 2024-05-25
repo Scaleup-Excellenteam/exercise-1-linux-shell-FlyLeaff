@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+NUMBER=${1:-50}
+
+
+DATE=$(date +%Y-%m-%d)
+DIR_NAME="files_zero_${DATE}"
+
+
+mkdir -p "$DIR_NAME"
+
+
+for ((i=1; i<=NUMBER; i++)); do
+    FILE_NAME="${DIR_NAME}/File_${i}.dat"
+    dd if=/dev/zero bs=1 count=$i of="$FILE_NAME" 2>/dev/null
+done
+
+
+echo "Created $NUMBER files in $DIR_NAME"
+
