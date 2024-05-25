@@ -2,6 +2,11 @@
 touch q1
 echo kohav buskila > q1
 printf "kohav buskila" >> q1
+
+cat <<EOF > q1
+kohav buskila
+EOF
+
 2:
 mkdir new
 3-4:

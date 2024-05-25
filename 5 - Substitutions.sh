@@ -13,7 +13,7 @@ cat -A l*
 7: this one took me awhile! 
 grep -l "user" $(ls | grep -E '^.{4}\.conf$')
 8.a:
-ls -lt | head -n 2 | tail -n 1
+ls -t | head -n 2 | tail -n 1
 8.b:
 echo "the last modified file is $(ls -t | head -n 2 | tail -n 1)"
 9:

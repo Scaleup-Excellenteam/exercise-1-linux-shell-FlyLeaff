@@ -13,9 +13,9 @@ mkdir -p "$DIR_NAME"
 
 for ((i=1; i<=NUMBER; i++)); do
     FILE_NAME="${DIR_NAME}/File_${i}.dat"
-
-    printf '0%.0s' $(seq 1 $i) > "$FILE_NAME"
+    dd if=/dev/zero bs=1 count=$i of="$FILE_NAME" 2>/dev/null
 done
+
 
 echo "Created $NUMBER files in $DIR_NAME"
 
